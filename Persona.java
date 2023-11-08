@@ -2,22 +2,51 @@ package prg.es03;
 
 public class Persona {
     
-    public String nome;
-    public String cognome;
-    public int eta;
+    private String nome;
+    private String cognome;
+    private int eta;
 
     public Persona() {
 
     }
 
     public Persona(String nome, String cognome, int eta) {
-        this.nome = nome;
-        this.cognome = cognome;
-        this.eta = eta;
+        this.setNome(nome);
+        this.setCognome(cognome);
+		this.setEta(eta);
     }
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getNome() {
+		return this.nome;
+	}
+	
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+	
+	public String getCognome() {
+		return this.cognome;
+	} 
+	
+	public void setEta(int eta) {
+		if (eta < 0) {
+			this.eta = 0;
+		}
+		else {
+			this.eta = eta;
+		}
+	}
+	
+	public int getEta() {
+		return this.eta;
+	}
 
-    public void toString_() {
-        System.out.println("Mi chiamo " + nome + " " + cognome + " e ho " + eta + " anni");
+    public String toString() {
+        return "Mi chiamo " + this.nome + " " + this.cognome + " e ho " + this.eta + " anni";
     }
 
     public void aumentaEta() {
@@ -25,7 +54,7 @@ public class Persona {
     }
 
     public boolean equals(Persona p2) {
-        if (this.nome.equals(p2.nome) && this.cognome.equals(p2.cognome) && this.eta == p2.eta) {
+        if (this.nome.equals(p2.getNome()) && this.cognome.equals(p2.getCognome()) && this.eta == p2.getEta()) {
             return true;
         }
         return false;
