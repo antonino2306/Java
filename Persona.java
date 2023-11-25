@@ -7,7 +7,7 @@ public class Persona {
     private int eta;
 
     public Persona() {
-
+		this("", "", 0);
     }
 
     public Persona(String nome, String cognome, int eta) {
@@ -46,7 +46,7 @@ public class Persona {
 	}
 
     public String toString() {
-        return "Mi chiamo " + this.nome + " " + this.cognome + " e ho " + this.eta + " anni";
+        return this.nome + " " + this.cognome + " " + this.eta + " anni";
     }
 
     public void aumentaEta() {
