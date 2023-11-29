@@ -12,10 +12,12 @@ public class Main {
 		
 		
 		
-		g.add(new Circle(1, 3.5));
-		g.add(new Square(2, 2));
-		g.add(new Rectangle(3, 3.2, 4.5));
-		g.add(new Square(4, 1));
+		g.add(new Circle(3.5));
+		g.add(new Square(2.6));
+		g.add(new Rectangle(3.9, 4.5));
+		g.add(new Square(4.4));
+		g.add(new Circle(3.5, "Blue", false));
+		g.add(new Rectangle(12.2, 3.5, "Green", false));
 		
 		
 		System.out.println("-----------------");

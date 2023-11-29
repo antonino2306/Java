@@ -8,12 +8,22 @@ public class Rectangle extends Shape {
 		this(-1, 1.0, 2.0);
 	}
 	
+	public Rectangle(double width, double length) {
+		this(width, length, "black", true);
+	}
+	
 	public Rectangle(int id, double width, double length) {
 		this(id, width, length, "black", true);
 	}
 	
 	public Rectangle(int id, double width, double length, String color, boolean filled) {
 		super(id, color, filled);
+		this.width = width;
+		this.length = length;
+	}
+	
+	public Rectangle(double width, double length, String color, boolean filled) {
+		super(color, filled);
 		this.width = width;
 		this.length = length;
 	}
@@ -36,7 +46,7 @@ public class Rectangle extends Shape {
 	}
 	
 	public String toString() {
-		return "Rectangle(" + getId() + ")" + "width: " + this.width + " length: " + this.length;
+		return "Rectangle (" + getId() + ") " + "width: " + this.width + " length: " + this.length + " color: " + getColor() + " filled: " + getFill();
 	}
 	
 	
