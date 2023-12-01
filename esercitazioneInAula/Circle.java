@@ -26,7 +26,7 @@ public class Circle extends Shape {
 	}
 	
 	public void draw() {
-		System.out.println(toString());
+		System.out.println(this);
 	}
 	
 	public void scale(double factor) {

@@ -12,6 +12,7 @@ public class AbbonatoPremium extends Abbonato {
 		super(nome, cognome, eta, percentualeSconto);
 	}
 	
+	@Override
 	public double acquista(double importo) {
 		
 		double prezzoScontato = importo - importo * getPercentualeSconto();
