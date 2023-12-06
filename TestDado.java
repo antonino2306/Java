@@ -19,10 +19,10 @@ public class TestDado {
 
         }
 
-        int max = risultati[1];
-        int maxIndex = 1;
+        int max = risultati[2];
+        int maxIndex = 2;
         
-        for (int i = 2; i < 13; i++) {
+        for (int i = 3; i < 13; i++) {
             if (risultati[i] > max) {
                 max = risultati[i];
                 maxIndex = i;
