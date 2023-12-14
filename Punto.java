@@ -33,7 +33,7 @@ public class Punto {
 	public double distanzaTraPunti(Punto p) {
 		double distanzaX = this.x - p.getCoordX();
 		double distanzaY = this.y - p.getCoordY();
-		return Math.hypot(distanzaX, distanzaY); //Il metodo hypot calcola il delta di x e y
+		return Math.hypot(distanzaX, distanzaY); //Il metodo hypot calcola il delta di x^2 e y^2
 	}
 	
 	@Override
