@@ -1,4 +1,5 @@
 package prg.es04;
+import java.lang.Math;
 
 public class Punto {
 	private double x;
@@ -30,11 +31,7 @@ public class Punto {
 	}
 	
 	public double distanzaTraPunti(Punto p) {
-		double deltaXSquare = Math.pow(this.x - p.getCoordX(), 2);
-		double deltaYSquare = Math.pow(this.y - p.getCoordY(), 2);
-		
-		double rad = Math.sqrt(deltaXSquare + deltaYSquare);
-		return rad;
+		return Math.hypot(Math.abs(this.x - p.getCoordX()), Math.abs(this.y - p.getCoordY()));
 	}
 	
 	@Override
