@@ -1,4 +1,5 @@
 package prg.es06;
+import java.util.InputMismatchException;
 
 public class IntegerSet {
 	private boolean insieme[] = new boolean[100];
@@ -15,12 +16,17 @@ public class IntegerSet {
 		this.insieme[indice] = valore;
 	}
 	
-	public void setInsieme(int s[]) {
+	public void setInsieme(int s[]) throws InputMismatchException{
+		
 		for (int i = 0; i < s.length; i++) {
 			if (s[i] >= 0 && s[i] <= 99) {
 				this.insieme[s[i]] = true;
 			}
+			else {
+				throw new InputMismatchException("I valori devono essere compresi tra 0 e 99");
+			}
 		}
+		
 	}
 	
 	public boolean[] getInsieme() {
