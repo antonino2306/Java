@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Arrays;
+import prg.es09.ComparatorRazionaliNumeratore;
+import prg.es09.ComparatorRazionaliDenominatore;
 
 public class ProvaRazionale {
 	
@@ -43,10 +45,18 @@ public class ProvaRazionale {
 			exc.printStackTrace();
 		}
 		
+		System.out.println("Sort in base all'ordinamento naturale");
 		Collections.sort(lista);
-		
 		System.out.println(Arrays.toString(lista.toArray(new Razionale[0])));
 		
+	
+		System.out.println("Sort in base ai numeratori");
+		Collections.sort(lista, new ComparatorRazionaliNumeratore());
+		System.out.println(Arrays.toString(lista.toArray(new Razionale[0])));
+		
+		System.out.println("Sort in base ai denominatori");
+		Collections.sort(lista, new ComparatorRazionaliDenominatore());
+		System.out.println(Arrays.toString(lista.toArray(new Razionale[0])));
 		
 		
 	}
