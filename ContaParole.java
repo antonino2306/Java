@@ -32,7 +32,13 @@ public class ContaParole {
 			
 		}
 		
-		System.out.println(frequenze.toString());
+		for (String k: frequenze.keySet()) {
+			
+			System.out.println(k + " " + frequenze.get(k));
+			
+		}
+		
+		// System.out.println(frequenze.toString());
 		
 	}
 }

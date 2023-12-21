@@ -1,6 +1,6 @@
 package prg.es03;
 
-public class Persona {
+public class Persona implements Comparable<Persona>{
     
     private String nome;
     private String cognome;
@@ -53,13 +53,33 @@ public class Persona {
         eta++;
     }
 
-    public boolean equals(Persona p2) {
-        if (this.nome.equals(p2.getNome()) && this.cognome.equals(p2.getCognome()) && this.eta == p2.getEta()) {
-            return true;
-        }
-        return false;
+    @Override
+    public boolean equals(Object p2) {
+        if (p2 == null) {
+			return false;
+		}
+
+				
+		if (this.hashCode() == p2.hashCode()) {
+			return true;
+		}
+
+		return false;
     }
 
+	@Override
+	public int hashCode() {
+	
+		String hashString = nome.concat(cognome);
+		hashString = hashString.concat(Integer.toString(eta));
+	
+		return hashString.hashCode();
+	}
     
-    
+	@Override
+	public int compareTo(Persona p) {
+		
+		return this.cognome.compareTo(p.getCognome());
+	
+	}
 }
