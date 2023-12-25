@@ -24,25 +24,62 @@ public class Contenitore {
 	}
 	
 	public void accendiLuce(String descrizione, int id) {
+		// todo: aggiungere un id speciale che se inserito fa accendere tutte le luci
+
+		boolean accensione = false;
 		for (Appartamento a: l) {
 			if (a.getDescrizione().toLowerCase().equals(descrizione.toLowerCase())) {
-				a.accendi(id);
+				
+				if (id == -1) {
+					a.accendiTutto();
+					accensione = true;
+				}
+				else {
+					a.accendi(id);
+					accensione = true;
+				}
+				
 			}
 		}
+		if (!accensione) {
+			throw new NessunaCorrispondenzaException();
+		}
+
+		
 	}
 	
 	public void spegniLuce(String descrizione, int id) {
+
+		boolean spegnimento = false;
 		for (Appartamento a: l) {
+			
 			if (a.getDescrizione().toLowerCase().equals(descrizione.toLowerCase())) {
+			
+				if (id == -1) {
+					a.spegniTutto();
+					spegnimento = true;
+				}
+			
 				a.spegni(id);
+				spegnimento = true;
 			} 
+		}
+		if (!spegnimento) {
+			throw new NessunaCorrispondenzaException();
 		}
 	}
 	
 	@Override
 	public String toString() {
-		return Arrays.toString(l.toArray(new Appartamento[0]));
+		StringBuilder sb = new StringBuilder();
+
+		for (Appartamento a: l) {
+			sb.append(a.toString() + "\n");
+		}
+
+		return sb.toString();
 	}
+
 	
 	
 	

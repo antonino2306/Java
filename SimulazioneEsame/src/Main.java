@@ -1,29 +1,39 @@
 package prg;
 
 import prg.lib.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
 	public static void main(String args[]) {
 		
-		Contenitore gestoreLuci = new Contenitore();
-	
-		gestoreLuci.aggiungiAppartamento(new Appartamento("casa", 4));
-		gestoreLuci.aggiungiAppartamento(new Ufficio("ufficio_personale", 2, false));
-		gestoreLuci.aggiungiAppartamento(new Appartamento("casa_2", 5));
+
+		List<Appartamento> lista = Arrays.asList(new Appartamento("casa", 4), new Ufficio("ufficio_personale", 2, false), new Appartamento("casa_campagna", 5), new Ufficio("studio", 3, false));
+
+		Contenitore gestoreLuci = new Contenitore(lista.iterator());
 		
 		try {
 			
+			System.out.println(gestoreLuci);
+
 			gestoreLuci.accendiLuce("casa", 1);
 			gestoreLuci.accendiLuce("casa" , 3);
+			gestoreLuci.accendiLuce("ufficio_personale", -1);
 			
 			System.out.println(gestoreLuci);
 			
-			// gestoreLuci.spegniLuce("ufficio_personale", 5);
 			
-		} catch (IndexOutOfBoundsException exc) {
+			
+		} 
+		catch (IndexOutOfBoundsException exc) {
 			System.out.println("Id non presente nella lista");
 		}
+		catch (NessunaCorrispondenzaException exc) {
+			System.out.println(exc);
+		}
 		
-		
+
 	}
 }

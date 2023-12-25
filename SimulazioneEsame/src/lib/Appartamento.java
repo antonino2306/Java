@@ -110,7 +110,7 @@ public class Appartamento implements Illuminazione {
 	
 	@Override
 	public String toString() {
-		return descrizione + " " + numeroStanze;
+		return descrizione + " numero stanze: " + numeroStanze + " stato luci: " + stato.toString();
 	}
 	
 }
