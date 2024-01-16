@@ -59,9 +59,6 @@ public class Appartamento implements Illuminazione {
 	
 	@Override
 	public void accendi(int id) {
-		if (id < 0 || id >= numeroStanze) {
-			throw new IndexOutOfBoundsException();
-		}
 		
 		if (stato.get(id)) {
 			System.out.println("Luce stanza " + id + " già accesa");
@@ -77,10 +74,6 @@ public class Appartamento implements Illuminazione {
 	
 	@Override
 	public void spegni(int id) {
-		if (id < 0 || id >= numeroStanze) {
-			throw new IndexOutOfBoundsException();
-		}
-		
 		if (stato.get(id)) {
 			stato.set(id, false);
 			System.out.println("Luce stanza " + id + " spenta");

@@ -10,8 +10,8 @@ public class Televisore implements Comparable<Televisore>{
 
     public Televisore(String marca, String modello, int dimensione, double prezzo) {
 
-        this.marca = marca;
-        this.modello = modello;
+        this.marca = marca.toLowerCase();
+        this.modello = modello.toLowerCase();
 
         this.dimensione = Math.abs(dimensione);
         this.prezzo = Math.abs(prezzo);

@@ -30,8 +30,10 @@ public class GestoreMagazzino {
 
     public void aggiornaQuantita(int id, int nuovaQuantita) {
 
-        //! gestire nel main la IndexOutOfBoundsException
-
+        //? Posso cercare per id basandomi sull'indice per il modo in cui genero l'id
+        //? e memorizzo i dati nella lista
+        //? e soprattutto perché non c'è nessuna funzione che rimuove elementi
+        //? altrimenti gli indici non combaciano più con l'id
         if (id < 0 || id >= magazzino.size()) {
             throw new IndexOutOfBoundsException("Il prodotto non è presente nel magazzino");
         }

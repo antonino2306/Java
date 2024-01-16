@@ -10,8 +10,8 @@ public class MacchinaCaffe {
     }
 
     public MacchinaCaffe(String marca, String modello, String tipologia) {
-        this.marca = marca;
-        this.modello = modello;
+        this.marca = marca.toLowerCase();
+        this.modello = modello.toLowerCase();
 
         setTipologia(tipologia);
     }

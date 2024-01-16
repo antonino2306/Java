@@ -33,7 +33,7 @@ public class Contenitore {
 
     public void remove(String modello) {
 
-        catalogo.remove(modello);
+        catalogo.remove(modello.toLowerCase());
 
     }
 

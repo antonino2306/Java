@@ -60,7 +60,7 @@ public class Telefono implements Comparable<Telefono> {
 
         if (obj instanceof Telefono t) {
 
-            if (this.hashCode() == modello.hashCode()) {
+            if (this.hashCode() == t.hashCode()) {
                 return true;
             }
 

@@ -10,6 +10,7 @@ public class Main {
     public static void main(String args[]) {
 
         Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter("\\n");
         List<Proiettore> lista = new ArrayList<>();
 
         int input = 0;

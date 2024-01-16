@@ -13,6 +13,7 @@ public class Main {
         int input = 0;
 
         Scanner scanner = new Scanner(System.in);
+        scanner.useDelimiter("\\n");
 
 
         do {

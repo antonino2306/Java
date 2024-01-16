@@ -47,6 +47,7 @@ public abstract class Prodotto implements Comparable<Prodotto> {
     @Override
     public int compareTo(Prodotto p) {
 
+        //? potevo confrontare in base al costo e non usare il comparator
         return descrizione.compareTo(p.getDescrizione());
 
     }
